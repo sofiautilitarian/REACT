@@ -1,3 +1,5 @@
+import React from "react";
+
 //PascalCasing
 function Message() {
     //JSX: JavaScript XML

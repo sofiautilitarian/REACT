@@ -1,13 +1,13 @@
+import React from "react";
 import { ClipboardEvent, useState } from "react";
 // {items: [], heading: string}
-interface Props{
+interface Props {
   //base properties and items
   //using type annotation to specify the type of various properties
-  items : string[];
+  items: string[];
   heading: string;
 }
-function ListGroup({items, heading}: Props) {
-  
+function ListGroup({ items, heading }: Props) {
   //let selectedIndex = 0;
   //Hook - tap into built in feats
   const [selectedIndex, setSelectedIndex] = useState(-1);
