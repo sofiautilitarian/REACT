@@ -8,10 +8,17 @@ import ListGroup from "./ListGroup";
 import Button from "./Button";
 
 function App() {
+  const [isVisible, setVisibility] = useState(false);
+  const [isApproved, setApproved] = useState(true);
+  let count = 0;
+  const handleClick = () => {
+    setVisibility(true);
+    count++;
+    console.log(isVisible);
+  };
   return (
     <div>
-      <Button children={"My Button"} onClick={function (): void {
-      } }/>
+      <Button children={"My Button"} onClick={function (): void {}} />
     </div>
   );
 }
