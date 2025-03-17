@@ -15,7 +15,12 @@ function App() {
     { id: 2, title: "Bug 2", fixed: false },
   ]);
   const handleClick = () => {
-    setBugs(produce((draft) => {}));
+    setBugs(
+      produce((draft) => {
+        const bug = draft.find((bug) => bug.id === 1);
+        if (bug) bug.fixed = true;
+      })
+    );
     // setBugs(bugs.map(bug => bug.id === 1? {...bug, fixed: true} : bug));
   };
   // const [firstName, setFirstName] = useState("");
@@ -29,6 +34,7 @@ function App() {
   // return <div>{fullName}</div>;
   return (
     <div>
+      {bugs.map(bug => <p key = {bug.id}>{bug.title} {bug.fixed? 'Fixed': 'New'}</p>)}
       <button onClick={handleClick}>Click Me</button>
     </div>
   );
